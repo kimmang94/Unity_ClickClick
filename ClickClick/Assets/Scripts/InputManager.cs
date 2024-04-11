@@ -16,17 +16,17 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A) == true)
         {
-            Debug.Log("A클릭!");
+            NoteGroupManager.Instance.OnInput_Func(KeyCode.A);
         }
 
         if (Input.GetKeyDown(KeyCode.S) == true)
         {
-            Debug.Log("S클릭!");
+            NoteGroupManager.Instance.OnInput_Func(KeyCode.S);
         }
 
         if (Input.GetKeyDown(KeyCode.D) == true)
         {
-            Debug.Log("D클릭!");
+            NoteGroupManager.Instance.OnInput_Func(KeyCode.D);
         }
     }
 }

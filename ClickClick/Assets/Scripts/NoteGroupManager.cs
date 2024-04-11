@@ -12,9 +12,8 @@ public class NoteGroupManager : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    void Update()
+    public void OnInput_Func(KeyCode keycode)
     {
-        
+        Debug.Log(keycode + "키가 눌렷어요");
     }
 }
