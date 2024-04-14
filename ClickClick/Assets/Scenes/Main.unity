@@ -437,6 +437,22 @@ PrefabInstance:
       propertyPath: baseNoteClass
       value: 
       objectReference: {fileID: 2258265655747853680, guid: 8229b1aeaa60220469e1b217365bf056, type: 3}
+    - target: {fileID: 6234687774525927706, guid: a0039bbd503984e41831f60797a6cd73, type: 3}
+      propertyPath: noteGapInterval
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327960466517712378, guid: a0039bbd503984e41831f60797a6cd73, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.8065999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327960466517712378, guid: a0039bbd503984e41831f60797a6cd73, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8065999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327960466517712378, guid: a0039bbd503984e41831f60797a6cd73, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 22.47
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
