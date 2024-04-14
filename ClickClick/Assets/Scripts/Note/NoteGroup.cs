@@ -8,6 +8,10 @@ public class NoteGroup : MonoBehaviour
     [SerializeField] private Note baseNoteClass = null;
     
     [SerializeField] private Transform noteSpawnTrf = null;
+    [SerializeField] private SpriteRenderer btnSrdr = null;
+    [SerializeField] private Sprite normalBtnSprite = null;
+    [SerializeField] private Sprite selectBtnSprite = null;
+    [SerializeField] private Animation anim = null;
     private List<Note> noteClassList;
 
     private float noteGapInterval = 8f;
@@ -36,5 +40,19 @@ public class NoteGroup : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnInputFunc(bool _isSelected)
+    {
+        if (_isSelected)
+        {
+            this.btnSrdr.sprite = this.selectBtnSprite;
+            this.anim.Play();
+        }
+    }
+
+    public void CallAni_Done()
+    {
+        this.btnSrdr.sprite = this.normalBtnSprite;
     }
 }

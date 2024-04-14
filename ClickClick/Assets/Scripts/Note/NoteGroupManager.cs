@@ -5,6 +5,7 @@ using UnityEngine;
 public class NoteGroupManager : MonoBehaviour
 {
     public static NoteGroupManager Instance;
+    [SerializeField] private NoteGroup[] noteGroupClass;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -14,6 +15,14 @@ public class NoteGroupManager : MonoBehaviour
 
     public void OnInput_Func(KeyCode keycode)
     {
-        Debug.Log(keycode + "키가 눌렷어요");
+        if (keycode == KeyCode.A)
+        {
+            this.noteGroupClass[0].OnInputFunc(true);
+        }
+        else
+        {
+            this.noteGroupClass[1].OnInputFunc(false);
+        }
+
     }
 }
