@@ -433,6 +433,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NoteGroup
       objectReference: {fileID: 0}
+    - target: {fileID: 6234687774525927706, guid: a0039bbd503984e41831f60797a6cd73, type: 3}
+      propertyPath: baseNoteClass
+      value: 
+      objectReference: {fileID: 2258265655747853680, guid: 8229b1aeaa60220469e1b217365bf056, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8305931431623132}
+  - component: {fileID: 6234687774525927706}
   m_Layer: 0
   m_Name: NoteGroup
   m_TagString: Untagged
@@ -34,6 +35,20 @@ Transform:
   - {fileID: 2103178239638516969}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6234687774525927706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088817923392485443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6e8a54bd772134890229307522f5c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteMaxNum: 5
+  baseNoteClass: {fileID: 2258265655747853680, guid: 8229b1aeaa60220469e1b217365bf056, type: 3}
 --- !u!1 &3118614834959647527
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +414,7 @@ Transform:
   m_GameObject: {fileID: 7207659631881865800}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -22.3439, z: 0}
+  m_LocalPosition: {x: 0, y: -22.5387, z: 0}
   m_LocalScale: {x: 2.5369127, y: 1.96875, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -452,7 +467,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 3.2027977, y: 1.5136877}
+  m_Size: {x: 3.2027977, y: 1.7115743}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
