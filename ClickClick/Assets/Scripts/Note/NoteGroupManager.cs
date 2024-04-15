@@ -21,17 +21,8 @@ public class NoteGroupManager : MonoBehaviour
         foreach (NoteGroup noteGroup in this.noteGroupClass)
         {
             noteGroup.OnSpawnNote(noteGroup == randomNoteGroupClass);
+            bool isSelected = noteGroup.GetKeyCode == keycode;
+            noteGroup.OnInputFunc(isSelected);
         }
-
-        if (keycode == KeyCode.A)
-        {
-            this.noteGroupClass[0].OnInputFunc(true);
-        }
-        else if (keycode == KeyCode.S)
-        {
-            this.noteGroupClass[1].OnInputFunc(false); 
-        }
-
-
     }
 }

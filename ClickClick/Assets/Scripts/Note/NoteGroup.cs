@@ -12,7 +12,10 @@ public class NoteGroup : MonoBehaviour
     [SerializeField] private Sprite normalBtnSprite = null;
     [SerializeField] private Sprite selectBtnSprite = null;
     [SerializeField] private Animation anim = null;
+    [SerializeField] private KeyCode keyCode;
     private List<Note> noteClassList;
+
+    public KeyCode GetKeyCode => this.keyCode;
 
     private float noteGapInterval = 8f;
 
