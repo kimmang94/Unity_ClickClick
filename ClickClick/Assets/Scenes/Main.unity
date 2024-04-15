@@ -358,10 +358,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: NoteGroup (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1088817923392485443, guid: a0039bbd503984e41831f60797a6cd73, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6234687774525927706, guid: a0039bbd503984e41831f60797a6cd73, type: 3}
       propertyPath: anim
       value: 
       objectReference: {fileID: 907931777}
+    - target: {fileID: 6234687774525927706, guid: a0039bbd503984e41831f60797a6cd73, type: 3}
+      propertyPath: keyCode
+      value: 115
+      objectReference: {fileID: 0}
     - target: {fileID: 6686206355148571051, guid: a0039bbd503984e41831f60797a6cd73, type: 3}
       propertyPath: m_text
       value: S
@@ -540,6 +548,10 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1611342118}
+    - target: {fileID: 6234687774525927706, guid: a0039bbd503984e41831f60797a6cd73, type: 3}
+      propertyPath: keyCode
+      value: 97
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
