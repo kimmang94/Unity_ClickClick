@@ -49,6 +49,12 @@ public class NoteGroup : MonoBehaviour
         _noteClass.DeActivate();
 
         this.noteClassList.RemoveAt(0);
+
+        for (int i = 0; i < this.noteClassList.Count; i++)
+        {
+            this.noteClassList[i].transform.localPosition = Vector3.up * i * this.noteGapInterval;
+        }
+
         if (_isSelected)
         {
             this.btnSrdr.sprite = this.selectBtnSprite;
