@@ -26,17 +26,19 @@ public class NoteGroup : MonoBehaviour
     {
         for (int i = 0; i < this.noteMaxNum; i++)
         {
-            OnSpawnNote();
+            OnSpawnNote(true);
         }
 
     }
 
-    private void OnSpawnNote()
+    public void OnSpawnNote(bool isApple)
     {
         GameObject _noteClassObj = GameObject.Instantiate(this.baseNoteClass.gameObject);
         _noteClassObj.transform.SetParent(this.noteSpawnTrf);
         _noteClassObj.transform.localPosition = Vector3.up * this.noteClassList.Count * this.noteGapInterval;
+       
         Note _noteClass = _noteClassObj.GetComponent<Note>();
+        _noteClass.Activate(isApple);
 
         this.noteClassList.Add(_noteClass);
     }
@@ -59,9 +61,6 @@ public class NoteGroup : MonoBehaviour
         {
             this.noteClassList[i].transform.localPosition = Vector3.up * i * this.noteGapInterval;
         }
-
-        this.OnSpawnNote();
-
 
         if (_isSelected)
         {

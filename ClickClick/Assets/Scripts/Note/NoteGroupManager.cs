@@ -15,14 +15,23 @@ public class NoteGroupManager : MonoBehaviour
 
     public void OnInput_Func(KeyCode keycode)
     {
+        int randID = Random.Range(0, this.noteGroupClass.Length);
+        NoteGroup randomNoteGroupClass = this.noteGroupClass[randID];
+
+        foreach (NoteGroup noteGroup in this.noteGroupClass)
+        {
+            noteGroup.OnSpawnNote(noteGroup == randomNoteGroupClass);
+        }
+
         if (keycode == KeyCode.A)
         {
             this.noteGroupClass[0].OnInputFunc(true);
         }
-        else
+        else if (keycode == KeyCode.S)
         {
-            this.noteGroupClass[1].OnInputFunc(true);
+            this.noteGroupClass[1].OnInputFunc(false); 
         }
+
 
     }
 }

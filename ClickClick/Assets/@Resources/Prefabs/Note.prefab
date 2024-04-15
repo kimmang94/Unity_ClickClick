@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184c01395e371954a872e6533c41fc9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  srdr: {fileID: 118867794425532591}
+  appleSprite: {fileID: 21300000, guid: ae515d1e08808274fb08d013bdfbd57e, type: 3}
+  blueberrySprite: {fileID: 21300000, guid: 9fd56ef0de9d3d8459fa1bdef82d3bae, type: 3}
 --- !u!1 &8331309803410475234
 GameObject:
   m_ObjectHideFlags: 0
