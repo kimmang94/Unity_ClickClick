@@ -44,6 +44,11 @@ public class NoteGroup : MonoBehaviour
 
     public void OnInputFunc(bool _isSelected)
     {
+        Note _noteClass = this.noteClassList[0];
+
+        _noteClass.DeActivate();
+
+        this.noteClassList.RemoveAt(0);
         if (_isSelected)
         {
             this.btnSrdr.sprite = this.selectBtnSprite;

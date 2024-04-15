@@ -21,7 +21,7 @@ public class NoteGroupManager : MonoBehaviour
         }
         else
         {
-            this.noteGroupClass[1].OnInputFunc(false);
+            this.noteGroupClass[1].OnInputFunc(true);
         }
 
     }
