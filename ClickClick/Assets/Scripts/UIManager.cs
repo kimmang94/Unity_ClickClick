@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-
     public static UIManager Instance;
 
     [SerializeField] private Image scroeImg = null;
@@ -20,7 +19,7 @@ public class UIManager : MonoBehaviour
     public void OnScore(int _currentScore, int _maxScore)
     {
         this.scoreTmp.text = $"{_currentScore}/{_maxScore}";
-
+        Debug.Log($" this.scoreTmp.text {this.scoreTmp.text}");
         this.scroeImg.fillAmount = (float)_currentScore / _maxScore;
     }
 }

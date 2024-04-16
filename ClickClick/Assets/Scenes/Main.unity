@@ -443,6 +443,7 @@ GameObject:
   - component: {fileID: 538028125}
   - component: {fileID: 538028124}
   - component: {fileID: 538028123}
+  - component: {fileID: 538028127}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -533,6 +534,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &538028127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538028122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943ec11cdaeed7947b6eab89b075dc99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scroeImg: {fileID: 1393315681}
+  scoreTmp: {fileID: 531639039}
 --- !u!1 &697904743
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,7 +657,7 @@ PrefabInstance:
       objectReference: {fileID: 907931777}
     - target: {fileID: 6234687774525927706, guid: a0039bbd503984e41831f60797a6cd73, type: 3}
       propertyPath: keyCode
-      value: 0
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 6686206355148571051, guid: a0039bbd503984e41831f60797a6cd73, type: 3}
       propertyPath: m_text
@@ -776,6 +791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16784dbf4148c94aa85ea1c72e13c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxScore: 100
 --- !u!4 &1122086563
 Transform:
   m_ObjectHideFlags: 0
@@ -1042,7 +1058,7 @@ PrefabInstance:
       objectReference: {fileID: 1611342118}
     - target: {fileID: 6234687774525927706, guid: a0039bbd503984e41831f60797a6cd73, type: 3}
       propertyPath: keyCode
-      value: 0
+      value: 97
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

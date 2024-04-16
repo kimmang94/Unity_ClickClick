@@ -6,6 +6,7 @@ public class GameSystemManager : MonoBehaviour
 {
     public static GameSystemManager Instance;
     private int score;
+    [SerializeField] private int maxScore;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -15,6 +16,7 @@ public class GameSystemManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        Debug.Log($"test {score}");
         
     }
 
@@ -28,5 +30,7 @@ public class GameSystemManager : MonoBehaviour
         {
             this.score--;
         }
+
+        UIManager.Instance.OnScore(this.score, maxScore);
     }
 }

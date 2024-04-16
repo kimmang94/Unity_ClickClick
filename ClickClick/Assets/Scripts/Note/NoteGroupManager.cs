@@ -22,6 +22,7 @@ public class NoteGroupManager : MonoBehaviour
         {
             noteGroup.OnSpawnNote(noteGroup == randomNoteGroupClass);
             bool isSelected = noteGroup.GetKeyCode == keycode;
+            Debug.Log(isSelected);
             noteGroup.OnInputFunc(isSelected);
         }
     }
