@@ -9,6 +9,8 @@ public class GameSystemManager : MonoBehaviour
     [SerializeField] private int maxScore;
     [SerializeField] private int noteGroupSpawnConditionScore = 10;
     private int nextNoteGroupUnLockCount;
+
+    private float maxTime = 30f;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -19,6 +21,21 @@ public class GameSystemManager : MonoBehaviour
     {
         UIManager.Instance.OnScore(this.score, maxScore);
         NoteGroupManager.Instance.Activate();
+        StartCoroutine(OnTimer());
+    }
+    
+    IEnumerator OnTimer()
+    {
+        float _currentTime = 0;
+
+        while (true)
+        {
+            _currentTime += Time.deltaTime;
+
+            UIManager.Instance.OnTimer(_currentTime, maxTime);
+
+            yield return null;
+        }
     }
 
     public void OnScore(bool isCorrect)
