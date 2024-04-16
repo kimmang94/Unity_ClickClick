@@ -7,11 +7,12 @@ public class Note : MonoBehaviour
     [SerializeField] private SpriteRenderer srdr;
     [SerializeField] private Sprite appleSprite;
     [SerializeField] private Sprite blueberrySprite;
-    public void Activate(bool isApple)
+    private bool isApple;
+    public void Activate(bool _isApple)
     {
         //Sprite sprite = isApple ? appleSprite : blueberrySprite;
-
-        if (isApple)
+        this.isApple = _isApple;
+        if (_isApple)
         {
             srdr.sprite = appleSprite;
         }
@@ -19,6 +20,16 @@ public class Note : MonoBehaviour
         {
             srdr.sprite = blueberrySprite;
         }
+    }
+
+    public void OnInput(bool isSelected)
+    {
+        if (isSelected == true)
+        {
+            bool _isCorrect = this.isApple == true;
+            GameSystemManager.Instance.OnScore(_isCorrect);
+        }
+        this.DeActivate();
     }
     public void DeActivate()
     {

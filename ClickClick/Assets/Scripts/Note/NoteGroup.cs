@@ -55,8 +55,8 @@ public class NoteGroup : MonoBehaviour
     public void OnInputFunc(bool _isSelected)
     {
         Note _noteClass = this.noteClassList[0];
+        _noteClass.OnInput(_isSelected);
 
-        _noteClass.DeActivate();
 
         this.noteClassList.RemoveAt(0);
 

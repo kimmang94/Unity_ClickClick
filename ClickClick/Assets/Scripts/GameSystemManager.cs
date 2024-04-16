@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameSystemManager : MonoBehaviour
 {
     public static GameSystemManager Instance;
+    private int score;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -15,5 +16,17 @@ public class GameSystemManager : MonoBehaviour
     private void Update()
     {
         
+    }
+
+    public void OnScore(bool isCorrect)
+    {
+        if(isCorrect)
+        {
+            this.score++;
+        }
+        else
+        {
+            this.score--;
+        }
     }
 }
