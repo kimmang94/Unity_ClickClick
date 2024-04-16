@@ -28,7 +28,6 @@ public class Note : MonoBehaviour
         {
             bool _isCorrect = this.isApple == true;
             GameSystemManager.Instance.OnScore(_isCorrect);
-            Debug.Log("Oninput");
         }
         this.DeActivate();
     }

@@ -66,12 +66,26 @@ public class NoteGroupManager : MonoBehaviour
         int randID = Random.Range(0, this.noteGroupsClassList.Count);
         NoteGroup randomNoteGroupClass = this.noteGroupsClassList[randID];
 
+        NoteGroup _correctNoteGroupClass = null;
+
+
         foreach (NoteGroup noteGroup in this.noteGroupsClassList)
         {
             noteGroup.OnSpawnNote(noteGroup == randomNoteGroupClass);
-            bool isSelected = noteGroup.GetKeyCode == keycode;
 
-            noteGroup.OnInputFunc(isSelected);
+            if (noteGroup.GetKeyCode != keycode)
+            {
+                noteGroup.OnInputFunc(false);
+            }
+            else
+            {
+                _correctNoteGroupClass = noteGroup;
+            }
+        }
+
+        if (_correctNoteGroupClass != null)
+        {
+            _correctNoteGroupClass.OnInputFunc(true);
         }
     }
 }
