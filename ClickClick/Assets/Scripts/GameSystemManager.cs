@@ -12,6 +12,8 @@ public class GameSystemManager : MonoBehaviour
     [SerializeField] private GameObject gameClear;
     [SerializeField] private GameObject gameOver;
     [SerializeField]  private float maxTime = 30f;
+
+    public bool isGameDone => gameClear.activeSelf == true || gameOver.activeSelf == true;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -38,6 +40,11 @@ public class GameSystemManager : MonoBehaviour
             UIManager.Instance.OnTimer(_currentTime, maxTime);
 
             yield return null;
+
+            if (isGameDone ==true)
+            {
+                yield break;
+            }
         }
 
         gameOver.SetActive(true);
