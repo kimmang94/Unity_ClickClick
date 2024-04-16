@@ -5,28 +5,28 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     public static InputManager Instance;
+    private List<KeyCode> keyCodeList;
     // Start is called before the first frame update
     private void Awake()
     {
         Instance = this;
+        keyCodeList = new List<KeyCode>();
     }
 
+    public void AddKeyCode(KeyCode _keyCode)
+    {
+        keyCodeList.Add(_keyCode);  
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) == true)
-        {
-            NoteGroupManager.Instance.OnInput_Func(KeyCode.A);
+        foreach (KeyCode _keyCode in keyCodeList) 
+        { 
+            if (Input.GetKeyDown(_keyCode) == true)
+            {
+                NoteGroupManager.Instance.OnInput_Func(_keyCode);
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.S) == true)
-        {
-            NoteGroupManager.Instance.OnInput_Func(KeyCode.S);
-        }
-
-        if (Input.GetKeyDown(KeyCode.D) == true)
-        {
-            NoteGroupManager.Instance.OnInput_Func(KeyCode.D);
-        }
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class NoteGroup : MonoBehaviour
@@ -12,7 +13,8 @@ public class NoteGroup : MonoBehaviour
     [SerializeField] private Sprite normalBtnSprite = null;
     [SerializeField] private Sprite selectBtnSprite = null;
     [SerializeField] private Animation anim = null;
-    [SerializeField] private KeyCode keyCode;
+    [SerializeField] private TextMeshPro keycodeTmp = null;
+    private KeyCode keyCode;
     private List<Note> noteClassList;
 
     public KeyCode GetKeyCode => this.keyCode;
@@ -25,12 +27,17 @@ public class NoteGroup : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    public void Activate(KeyCode _keyCode)
     {
+        this.keyCode = _keyCode;
+
+        this.keycodeTmp.text = _keyCode.ToString();
         for (int i = 0; i < this.noteMaxNum; i++)
         {
             OnSpawnNote(true);
         }
+
+        InputManager.Instance.AddKeyCode(_keyCode);
 
     }
 

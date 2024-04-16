@@ -13,11 +13,10 @@ public class GameSystemManager : MonoBehaviour
         Instance = this;
     }
 
-    // Update is called once per frame
-    private void Update()
+    private void Start()
     {
-        Debug.Log($"test {score}");
-        
+        UIManager.Instance.OnScore(this.score, maxScore);
+        NoteGroupManager.Instance.Activate();
     }
 
     public void OnScore(bool isCorrect)
