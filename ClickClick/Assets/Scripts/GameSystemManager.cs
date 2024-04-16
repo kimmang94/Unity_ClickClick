@@ -9,8 +9,9 @@ public class GameSystemManager : MonoBehaviour
     [SerializeField] private int maxScore;
     [SerializeField] private int noteGroupSpawnConditionScore = 10;
     private int nextNoteGroupUnLockCount;
-
-    private float maxTime = 30f;
+    [SerializeField] private GameObject gameClear;
+    [SerializeField] private GameObject gameOver;
+    [SerializeField]  private float maxTime = 30f;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -22,13 +23,15 @@ public class GameSystemManager : MonoBehaviour
         UIManager.Instance.OnScore(this.score, maxScore);
         NoteGroupManager.Instance.Activate();
         StartCoroutine(OnTimer());
+        gameClear.SetActive(false);
+        gameOver.SetActive(false);
     }
     
     IEnumerator OnTimer()
     {
-        float _currentTime = 0;
+        float _currentTime = 0f;
 
-        while (true)
+        while (_currentTime < maxTime)
         {
             _currentTime += Time.deltaTime;
 
@@ -36,6 +39,9 @@ public class GameSystemManager : MonoBehaviour
 
             yield return null;
         }
+
+        gameOver.SetActive(true);
+
     }
 
     public void OnScore(bool isCorrect)
@@ -51,6 +57,10 @@ public class GameSystemManager : MonoBehaviour
                 NoteGroupManager.Instance.OnSpawnNoteGroup();
             }
 
+            if (maxScore <= score)
+            {
+                gameClear.SetActive(true);
+            }
         }
         else
         {
@@ -58,5 +68,10 @@ public class GameSystemManager : MonoBehaviour
         }
 
         UIManager.Instance.OnScore(this.score, maxScore);
+    }
+
+    public void CallBtn_Restart()
+    {
+
     }
 }
