@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class NoteGroupManager : MonoBehaviour
 {
     public static NoteGroupManager Instance;
-    [SerializeField] private KeyCode[] initKeyCodeArr;
+
     [SerializeField] private NoteGroup baseNoteGroup = null;
     [SerializeField] private NoteGroup[] noteGroupClass;
     [SerializeField] private float noteGroupWidthInterval = 1f;
     private List<NoteGroup> noteGroupsClassList;
+    [SerializeField] private int initNoteGroupNum = 2;
+    private KeyCode[] wholekeyCodeArr = new KeyCode[]
+        {
+            KeyCode.A,
+            KeyCode.S,
+            KeyCode.D,
+            KeyCode.F,
+            KeyCode.G,
+            KeyCode.H,
+            KeyCode.J,
+            KeyCode.K,
+            KeyCode.L,
+        };
 
     // Start is called before the first frame update
     private void Awake()
@@ -23,9 +35,21 @@ public class NoteGroupManager : MonoBehaviour
 
     public void Activate()
     {
-        foreach (var _initKeyCode in initKeyCodeArr)
-            this.OnSpawnNoteGroup(_initKeyCode);  
+        for (int i = 0; i < initNoteGroupNum; i++)
+        {
+            KeyCode _keyCode = wholekeyCodeArr[i];
+            OnSpawnNoteGroup(_keyCode);
+        }
+
     }
+    public void OnSpawnNoteGroup()
+    {
+        int _noteGroupNum = noteGroupsClassList.Count;
+        var _keyCode = wholekeyCodeArr[_noteGroupNum];
+        OnSpawnNoteGroup(_keyCode);
+    }
+
+
     public void OnSpawnNoteGroup(KeyCode _keyCode)
     {
         GameObject _noteGruopClassObj = GameObject.Instantiate(this.baseNoteGroup.gameObject);
@@ -46,7 +70,7 @@ public class NoteGroupManager : MonoBehaviour
         {
             noteGroup.OnSpawnNote(noteGroup == randomNoteGroupClass);
             bool isSelected = noteGroup.GetKeyCode == keycode;
-            Debug.Log(isSelected);
+
             noteGroup.OnInputFunc(isSelected);
         }
     }

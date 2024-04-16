@@ -577,11 +577,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1359c3b563f39334e9b1422495d4e8e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initKeyCodeArr: 6100000073000000
   baseNoteGroup: {fileID: 6234687774525927706, guid: a0039bbd503984e41831f60797a6cd73, type: 3}
   noteGroupClass:
   - {fileID: 6234687774525927706, guid: a0039bbd503984e41831f60797a6cd73, type: 3}
   noteGroupWidthInterval: 10.8
+  initNoteGroupNum: 2
 --- !u!4 &697904745
 Transform:
   m_ObjectHideFlags: 0
@@ -702,6 +702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxScore: 100
+  noteGroupSpawnConditionScore: 10
 --- !u!4 &1122086563
 Transform:
   m_ObjectHideFlags: 0

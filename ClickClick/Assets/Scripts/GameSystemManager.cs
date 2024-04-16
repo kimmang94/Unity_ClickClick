@@ -7,6 +7,8 @@ public class GameSystemManager : MonoBehaviour
     public static GameSystemManager Instance;
     private int score;
     [SerializeField] private int maxScore;
+    [SerializeField] private int noteGroupSpawnConditionScore = 10;
+    private int nextNoteGroupUnLockCount;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -24,6 +26,14 @@ public class GameSystemManager : MonoBehaviour
         if(isCorrect)
         {
             this.score++;
+            nextNoteGroupUnLockCount++;
+
+            if (noteGroupSpawnConditionScore <= nextNoteGroupUnLockCount)
+            {
+                nextNoteGroupUnLockCount = 0;
+                NoteGroupManager.Instance.OnSpawnNoteGroup();
+            }
+
         }
         else
         {
